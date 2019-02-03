@@ -1,0 +1,32 @@
+{
+  "name": "jianshu-react-server",
+  "version": "1.0.0",
+  "description": "实现一个后端的代理转发，为jianshu-react项目提供数据支持",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/main.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LingHS/jianshu-react-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LingHS/jianshu-react-server/issues"
+  },
+  "homepage": "https://github.com/LingHS/jianshu-react-server#readme",
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.1"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.0.48",
+    "@types/koa-router": "^7.0.39",
+    "@types/node": "^10.12.21"
+  }
+}
