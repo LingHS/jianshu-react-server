@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node src/main.ts"
+    "start": "ts-node src/app.ts"
   },
   "repository": {
     "type": "git",
@@ -19,13 +19,19 @@
   },
   "homepage": "https://github.com/LingHS/jianshu-react-server#readme",
   "dependencies": {
+    "@types/koa-static-cache": "^5.1.0",
     "koa": "^2.7.0",
+    "koa-better-http-proxy": "^0.2.4",
+    "koa-logger": "^3.2.0",
     "koa-router": "^7.4.0",
+    "koa-static-cache": "^5.1.2",
+    "request": "^2.88.0",
     "ts-node": "^8.0.2",
     "typescript": "^3.3.1"
   },
   "devDependencies": {
     "@types/koa": "^2.0.48",
+    "@types/koa-logger": "^3.1.1",
     "@types/koa-router": "^7.0.39",
     "@types/node": "^10.12.21"
   }
