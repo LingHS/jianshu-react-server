@@ -6,11 +6,11 @@ import router = require('./router')
 
 const app = new Koa();
 // app.proxy = true;
-app.use(logger((str:string, args:any) => {
-    // redirect koa logger to other output pipe
-    // default is process.stdout(by console.log function)
-    console.log(str)
-}))
+// app.use(logger((str:string, args:any) => {
+//     // redirect koa logger to other output pipe
+//     // default is process.stdout(by console.log function)
+//     console.log(str)
+// }))
 app.use(KoaStaticCache(path.resolve(__dirname, '..') + '/view', {
     prefix: '/',
     maxAge: 60 * 1000,
