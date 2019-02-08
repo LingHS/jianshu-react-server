@@ -22,10 +22,10 @@ jobs: # a collection of steps
             - ./node_modules
       - run: # run typescript
           name: tsc
-          command: npx tsc && ls
+          command: npx tsc && ls && pwd
       - persist_to_workspace:
           root: .
-          path:
+          paths:
           - ./*
       # - run: # run tests
       #     name: test
