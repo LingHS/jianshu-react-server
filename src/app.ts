@@ -19,5 +19,5 @@ app.use(KoaStaticCache(path.resolve(__dirname, '..') + '/view', {
 app.use(router.routes())
     .use(router.allowedMethods());
 
-app.listen(3000,'127.0.0.1', () => console.log('Server running on port 3000'));
+app.listen(3000, () => console.log('Server running on port 3000'));
 
