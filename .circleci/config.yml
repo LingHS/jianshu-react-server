@@ -23,6 +23,10 @@ jobs: # a collection of steps
       - run: # run typescript
           name: tsc
           command: npx tsc && ls
+      - persist_to_workspace:
+          root: .
+          path:
+          - ./*
       # - run: # run tests
       #     name: test
       #     command: npm test
