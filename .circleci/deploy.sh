@@ -8,4 +8,4 @@ NOW=`date +"%Y-%m-%d %H:%M:%S"`
 
 
 rsync -vzrc --delete --exclude ".git" --exclude ".env" --exclude ".circleci" --exclude "src" --exclude "tsconfig.json" $SRC $SSH_USER@$SSH_HOST:$DES
-ssh $SSH_USER@$SSH_HOST "<remote deploy command>"
+#ssh $SSH_USER@$SSH_HOST "<remote deploy command>"
