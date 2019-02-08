@@ -22,13 +22,13 @@ jobs: # a collection of steps
             - ./node_modules
       - run: # run typescript
           name: tsc
-          command: npx tsc
+          command: npx tsc && ls
       # - run: # run tests
       #     name: test
       #     command: npm test
-      - run: # run coverage report
-          name: code-coverage
-          command: './node_modules/.bin/nyc report --reporter=text-lcov'
+      # - run: # run coverage report
+      #     name: code-coverage
+      #     command: './node_modules/.bin/nyc report --reporter=text-lcov'
       - store_artifacts: # special step to save test results as as artifact
           # Upload test summary for display in Artifacts: https://circleci.com/docs/2.0/artifacts/ 
           path: test-results.xml
@@ -39,3 +39,24 @@ jobs: # a collection of steps
       - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
           path: test-results.xml
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
+  deploy:
+    machine:
+      enabled: true
+    working_directory: ~/jianshu-react-server # directory where steps will run
+    steps:
+      - run: echo "-----------------部署开始-----------------"
+      - run: pwd && ls 
+      - run:
+          name: Deploy Over SSH
+          command: ./.circleci/deploy.sh
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
